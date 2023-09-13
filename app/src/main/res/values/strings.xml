@@ -1,3 +1,36 @@
 <resources>
     <string name="app_name">ArtSpace</string>
+
+    <string name="artist_rubens">Pierre Paul Rubens</string>
+    <string name="artist_le_brun">Élisabeth Vigée Le Brun</string>
+    <string name="artist_pissarro">Camille Pissarro</string>
+    <string name="artist_van_gogh">Vincent van Gogh</string>
+    <string name="artist_da_vinci">Léonard de Vinci</string>
+    <string name="artist_monet">Claude Monet</string>
+    <string name="artist_cezanne">Paul Cézanne</string>
+    <string name="artist_rembrandt">Rembrandt</string>
+
+    <string name="painting_phaeton_rubens">La Chute de Phaéton</string>
+    <string name="painting_fresnes_le_brun">Madame d\'Aguesseau de Fresnes</string>
+    <string name="painting_fence_pissarro">La Clôture</string>
+    <string name="painting_creek_pissarro">Un ruisseau à St. Thomas (Îles Vierges))</string>
+    <string name="painting_flower_beds_van_gogh">Champs de fleurs en Hollande</string>
+    <string name="painting_roses_van_gogh">Roses</string>
+    <string name="painting_da_vinci">Portrait de Ginevra de\' Benci</string>
+    <string name="painting_garden_monet">Le Jardin de l\'Artiste à Vétheuil</string>
+    <string name="painting_still_life_cezanne">Nature morte avec cruche de lait et fruits</string>
+    <string name="painting_mill_rembrandt">Le Moulin</string>
+    <string name="painting_faust_rembrandt">Faust</string>
+
+    <string name="date_phaeton_rubens">1604/1605</string>
+    <string name="date_fresnes_le_brun">1789</string>
+    <string name="date_fence_pissarro">1872</string>
+    <string name="date_creek_pissarro">1856</string>
+    <string name="date_flower_beds_van_gogh">1883</string>
+    <string name="date_roses_van_gogh">1890</string>
+    <string name="date_da_vinci">1474/1478</string>
+    <string name="date_garden_monet">1881</string>
+    <string name="date_still_life_cezanne">1900</string>
+    <string name="date_mill_rembrandt">1645/1648</string>
+    <string name="date_faust_rembrandt">1652</string>
 </resources>
