@@ -29,14 +29,18 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.artspace.ui.theme.ArtSpaceTheme
-import com.example.artspace.ui.theme.PurpleGrey40
+import com.example.artspace.ui.theme.LightGrey
 
 
 class MainActivity : ComponentActivity() {
@@ -217,14 +221,14 @@ fun ArtworkLayout(
 ) {
     Column (
         modifier = modifier
-            .padding(20.dp)
+            .padding(12.dp)
             .padding(top = 40.dp)
             .fillMaxHeight()
     ) {
         Box(
             modifier = modifier
-                .background(PurpleGrey40)
-                .padding(16.dp)
+                .shadow(4.dp)
+                .padding(24.dp)
                 .weight(3f)
         ) {
             Image(
@@ -233,38 +237,47 @@ fun ArtworkLayout(
                 contentScale = ContentScale.Crop
             )
         }
-        Spacer(modifier = modifier.height(70.dp))
+        Spacer(modifier = modifier.height(50.dp))
         Column(
+            verticalArrangement = Arrangement.Center,
             modifier = modifier
-                .background(PurpleGrey40)
+                .fillMaxSize()
+                .weight(.6f)
+                .shadow(8.dp)
+                .background(LightGrey)
                 .padding(12.dp)
-                .fillMaxWidth()
-                .weight(.5f)
         ) {
             Text(
-                text = stringResource(id = title)
+                text = stringResource(id = title),
+                fontWeight = FontWeight.Bold,
+                fontSize = 20.sp
             )
             Row(modifier = modifier) {
-                Text(text = stringResource(id = artist))
-                Spacer(modifier = modifier.width(20.dp))
-                Text(text = stringResource(id = date))
+                Text(
+                    text = stringResource(id = artist),
+                    fontStyle = FontStyle.Italic
+                )
+                Spacer(modifier = modifier.width(10.dp))
+                Text(
+                    text = "(" + stringResource(id = date) + ")"
+                )
             }
         }
         Row(
             horizontalArrangement = Arrangement.SpaceAround,
             verticalAlignment = Alignment.Bottom,
             modifier = Modifier
-                .weight(1f)
+                .weight(.6f)
                 .fillMaxWidth()
         ) {
-            ChangeImg("Previous", changeImg = previousImg)
-            ChangeImg("Next", changeImg = nextImg)
+            Button("Previous", changeImg = previousImg)
+            Button("Next", changeImg = nextImg)
         }
     }
 }
 
 @Composable
-fun ChangeImg(btnName: String, changeImg: () -> Unit, modifier: Modifier = Modifier) {
+fun Button(btnName: String, changeImg: () -> Unit, modifier: Modifier = Modifier) {
     Row(
         verticalAlignment = Alignment.Bottom,
         modifier = modifier
@@ -278,7 +291,7 @@ fun ChangeImg(btnName: String, changeImg: () -> Unit, modifier: Modifier = Modif
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun ArtSpaceLayoutPreview() {
+fun ArtSpaceAppPreview() {
     ArtSpaceTheme {
         ArtSpaceApp()
     }
